@@ -1,6 +1,7 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -24,16 +25,29 @@ kotlin {
         val desktopMain by getting
         
         androidMain.dependencies {
+            // Koin
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
+
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
-
             // Ktor
-            implementation(libs.ktor.client.core)
+            api(libs.ktor.client.core)
             implementation(libs.ktor.client.cio)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.client.serializatiom)
+
+            // Koin
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
+
+            // Lifecycle ViewModel
+            implementation(libs.lifecycle.viewmodel)
+
+            // Navigation compose
+            implementation(libs.navigation.compose)
 
             implementation(compose.runtime)
             implementation(compose.foundation)

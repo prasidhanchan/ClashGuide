@@ -11,6 +11,10 @@ compose-plugin = "1.6.10"
 junit = "4.13.2"
 kotlin = "2.0.0"
 ktor = "2.3.11"
+lifecycleViewModel = "2.8.2"
+koin = "3.5.6"
+koinComposeMultiplatform = "1.2.0-alpha3"
+navigationCompose = "2.7.0-alpha07"
 
 [libraries]
 # Ktor
@@ -18,6 +22,18 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-client-serializatiom = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+# ViewModel
+lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycleViewModel"}
+
+# Koin
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinComposeMultiplatform" }
+
+# Navigation compose
+navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }

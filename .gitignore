@@ -20,3 +20,6 @@ captures
 #buildSrc
 buildSrc/.gradle
 buildSrc/build
+
+# BASE_URL
+composeApp/src/commonMain/kotlin/domain/utils/Constants.kt
