@@ -1,7 +1,6 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import java.util.Properties
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -23,7 +22,7 @@ kotlin {
     
     sourceSets {
         val desktopMain by getting
-        
+
         androidMain.dependencies {
             // Koin
             implementation(libs.koin.android)
@@ -43,6 +42,12 @@ kotlin {
             api(libs.koin.core)
             implementation(libs.koin.compose)
 
+            // Coil
+            api(libs.coil.compose.core)
+            implementation(libs.coil)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network)
+
             // Lifecycle ViewModel
             implementation(libs.lifecycle.viewmodel)
 
@@ -54,10 +59,19 @@ kotlin {
             implementation(compose.material)
             implementation(compose.ui)
             implementation(compose.components.resources)
+            implementation(compose.preview)
             implementation(compose.components.uiToolingPreview)
         }
         desktopMain.dependencies {
+            // Kotlin coroutines
+            implementation(libs.kotlinx.coroutines)
+
+            // Logger
+            implementation(libs.slf4j.logger)
+            implementation(libs.logback.classic)
+
             implementation(compose.desktop.currentOs)
+            implementation(compose.preview)
         }
     }
     task("testClasses")
