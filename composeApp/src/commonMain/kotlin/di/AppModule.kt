@@ -19,10 +19,10 @@ val appModule = module {
                     isLenient = true
                     ignoreUnknownKeys = true
                 })
+            }
 
-                install(HttpTimeout) {
-                    requestTimeoutMillis = 2000L
-                }
+            install(HttpTimeout) {
+                requestTimeoutMillis = 2000L
             }
         }
     }

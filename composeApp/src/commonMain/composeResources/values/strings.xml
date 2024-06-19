@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Clash Guide</string>
+    <string name="supercell">SuperCell</string>
+    <string name="game">Game</string>
+    <string name="about">About</string>
+    <string name="menu">Menu</string>
+    <string name="slider_image">Slider Image</string>
+</resources>

@@ -16,7 +16,11 @@ fun ClashGuideApp() {
             val homeViewModel = koinViewModel<HomeViewModel>()
             val uiState by homeViewModel.uiState.collectAsState()
 
-            HomeScreen()
+            HomeScreen(
+                onGameClick = { },
+                onAboutClick = { },
+                onMenuClick = { }
+            )
         }
     }
 }
