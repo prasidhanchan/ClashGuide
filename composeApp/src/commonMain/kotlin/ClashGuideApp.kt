@@ -1,26 +1,31 @@
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import domain.utils.clashBlack
 import domain.utils.koinViewModel
+import navigation.ClashGuideNavigation
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinContext
-import presentation.home.HomeScreen
 import presentation.home.HomeViewModel
 
 @Composable
 @Preview
 fun ClashGuideApp() {
     MaterialTheme {
-        KoinContext {
-            val homeViewModel = koinViewModel<HomeViewModel>()
-            val uiState by homeViewModel.uiState.collectAsState()
+        Scaffold(
+            modifier = Modifier.fillMaxSize(),
+            backgroundColor = clashBlack
+        ) { innerPadding ->
+            KoinContext {
+                val homeViewModel = koinViewModel<HomeViewModel>()
 
-            HomeScreen(
-                onGameClick = { },
-                onAboutClick = { },
-                onMenuClick = { }
-            )
+                ClashGuideNavigation(
+                    innerPadding = innerPadding,
+                    homeViewModel = homeViewModel
+                )
+            }
         }
     }
 }

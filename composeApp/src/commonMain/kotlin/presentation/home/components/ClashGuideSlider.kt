@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import clashguide.composeapp.generated.resources.Res
 import clashguide.composeapp.generated.resources.slider_image
@@ -43,6 +44,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
  * Slider composable to display the list of images.
  * @param modifier Modifier to be applied to the slider.
  * @param sliderImages List of DrawableResource to be displayed.
+ * @param focusedCardHeight The height of the card in focus.
+ * @param unFocusedCardHeight The height of the card not in focus.
  * @param duration Duration of the animation in milliseconds.
  * @param delay Delay between each page animation in milliseconds.
  */
@@ -51,6 +54,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun ClashGuideSlider(
     modifier: Modifier = Modifier,
     sliderImages: List<DrawableResource>,
+    focusedCardHeight: Dp = 180.dp,
+    unFocusedCardHeight: Dp = 155.dp,
     duration: Int = 800,
     delay: Int = 1000
 ) {
@@ -73,7 +78,7 @@ fun ClashGuideSlider(
         modifier = modifier
             .padding(vertical = 12.dp)
             .fillMaxWidth()
-            .height(220.dp),
+            .height(focusedCardHeight + 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -85,14 +90,16 @@ fun ClashGuideSlider(
             pageContent = { page ->
                 SliderCard(
                     sliderImage = sliderImages[page],
-                    isSelected = state.currentPage == page
+                    isSelected = state.currentPage == page,
+                    focusedCardHeight = focusedCardHeight,
+                    unFocusedCardHeight = unFocusedCardHeight
                 )
             }
         )
 
         DotsIndicator(
             modifier = Modifier
-                .padding(top = 10.dp)
+                .padding(top = 20.dp)
                 .weight(1f),
             pageCount = sliderImages.size,
             selectedIndex = state.currentPage
@@ -105,15 +112,19 @@ fun ClashGuideSlider(
  * @param modifier Modifier to be applied to the Card.
  * @param sliderImage DrawableResource to be displayed.
  * @param isSelected Boolean to determine if the card is selected or not.
+ * @param focusedCardHeight The height of the card in focus.
+ * @param unFocusedCardHeight The height of the card not in focus.
  */
 @Composable
 fun SliderCard(
     modifier: Modifier = Modifier,
     sliderImage: DrawableResource,
-    isSelected: Boolean
+    isSelected: Boolean,
+    focusedCardHeight: Dp = 180.dp,
+    unFocusedCardHeight: Dp = 155.dp
 ) {
     val height by animateDpAsState(
-        targetValue = if (isSelected) 180.dp else 155.dp,
+        targetValue = if (isSelected) focusedCardHeight else unFocusedCardHeight,
         animationSpec = tween(durationMillis = 600),
         label = "cardHeightAnimation",
     )
@@ -123,7 +134,7 @@ fun SliderCard(
             .padding(horizontal = 8.dp)
             .fillMaxWidth()
             .height(height),
-        shape = RoundedCornerShape(30.dp),
+        shape = RoundedCornerShape(25.dp),
         color = clashOffBlack
     ) {
         Image(
