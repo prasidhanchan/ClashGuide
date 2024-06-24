@@ -22,8 +22,7 @@ class TroopRepository(
                 dataOrException.data = content.content
                 dataOrException.isLoading = false
             } else {
-                dataOrException.isLoading = false
-                throw Exception(response.status.toString())
+                throw Exception(response.status.value.toString())
             }
         } catch (e: Exception) {
             dataOrException.isLoading = false

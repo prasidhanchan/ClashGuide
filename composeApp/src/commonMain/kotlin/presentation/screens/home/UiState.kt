@@ -1,4 +1,4 @@
-package presentation.home
+package presentation.screens.home
 
 import domain.models.Troop
 

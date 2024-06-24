@@ -1,4 +1,4 @@
-package presentation.splash
+package presentation.screens.splash
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween

@@ -7,7 +7,7 @@ import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
-import presentation.home.HomeViewModel
+import presentation.screens.home.HomeViewModel
 
 val appModule = module {
 
@@ -22,7 +22,7 @@ val appModule = module {
             }
 
             install(HttpTimeout) {
-                requestTimeoutMillis = 2000L
+                requestTimeoutMillis = 30000L
             }
         }
     }

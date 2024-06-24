@@ -1,4 +1,4 @@
-package presentation.home.components
+package presentation.screens.home.components
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween

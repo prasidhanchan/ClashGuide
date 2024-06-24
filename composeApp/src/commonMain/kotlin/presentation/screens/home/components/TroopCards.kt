@@ -1,4 +1,4 @@
-package presentation.home.components
+package presentation.screens.home.components
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -25,6 +25,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -131,7 +132,7 @@ private fun TroopCard(
     delay: Int,
     onClick: () -> Unit
 ) {
-    var alpha by remember { mutableFloatStateOf(0f) }
+    var alpha by rememberSaveable { mutableFloatStateOf(0f) }
     val interactionSource = remember { MutableInteractionSource() }
 
     val alphaAnimation by animateFloatAsState(
@@ -144,8 +145,10 @@ private fun TroopCard(
     )
 
     LaunchedEffect(key1 = Unit) {
-        delay(800L)
-        alpha = 1f
+        if (alpha == 0f) {
+            delay(800L)
+            alpha = 1f
+        }
     }
 
     Box(

@@ -1,4 +1,4 @@
-package presentation.home
+package presentation.screens.home
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.HorizontalScrollbar
@@ -31,10 +31,10 @@ import clashguide.composeapp.generated.resources.troops
 import domain.models.Troop
 import domain.utils.clashBlack
 import org.jetbrains.compose.resources.stringResource
-import presentation.home.components.ClashGuideSlider
-import presentation.home.components.HomeAppBar
-import presentation.home.components.Loader
-import presentation.home.components.TroopCards
+import presentation.components.Loader
+import presentation.screens.home.components.ClashGuideSlider
+import presentation.screens.home.components.HomeAppBar
+import presentation.screens.home.components.TroopCards
 
 @Composable
 actual fun HomeScreen(

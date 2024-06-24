@@ -1,4 +1,4 @@
-package presentation.home.components
+package presentation.screens.home.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

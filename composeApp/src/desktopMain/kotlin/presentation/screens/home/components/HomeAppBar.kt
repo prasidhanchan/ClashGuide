@@ -1,13 +1,17 @@
-package presentation.home.components
+package presentation.screens.home.components
 
+import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
@@ -37,24 +41,24 @@ actual fun HomeAppBar(
 ) {
     Row(
         modifier = modifier
-            .padding(horizontal = 25.dp)
-            .height(80.dp)
-            .fillMaxWidth(),
+            .padding(start = 20.dp, end = 20.dp, top = 20.dp)
+            .fillMaxWidth()
+            .height(100.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Image(
-            modifier = Modifier.size(80.dp),
-            painter = painterResource(Res.drawable.supercell_logo),
-            contentDescription = stringResource(Res.string.supercell)
+            painter = painterResource(resource = Res.drawable.supercell_logo),
+            modifier = Modifier.size(100.dp),
+            contentDescription = stringResource(resource = Res.string.supercell)
         )
 
         Row(
             modifier = Modifier
-                .padding(vertical = 20.dp)
-                .fillMaxSize(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceEvenly
+                .fillMaxHeight()
+                .fillMaxWidth(0.9f),
+            verticalAlignment = Alignment.Top,
+            horizontalArrangement = Arrangement.End
         ) {
             TextButton(
                 onClick = onGameClick,
@@ -71,6 +75,8 @@ actual fun HomeAppBar(
                 }
             )
 
+            Spacer(modifier = Modifier.width(20.dp))
+
             TextButton(
                 onClick = onAboutClick,
                 content = {
@@ -85,6 +91,8 @@ actual fun HomeAppBar(
                     )
                 }
             )
+
+            Spacer(modifier = Modifier.width(20.dp))
 
             TextButton(
                 onClick = onMenuClick,
@@ -102,4 +110,14 @@ actual fun HomeAppBar(
             )
         }
     }
+}
+
+@Preview
+@Composable
+private fun HomeAppBarPreview() {
+    HomeAppBar(
+        onGameClick = { },
+        onAboutClick = { },
+        onMenuClick = { }
+    )
 }

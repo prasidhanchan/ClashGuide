@@ -1,4 +1,4 @@
-package presentation.home.components
+package presentation.components
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween

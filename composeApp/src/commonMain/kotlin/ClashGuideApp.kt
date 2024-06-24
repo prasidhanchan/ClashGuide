@@ -8,7 +8,7 @@ import domain.utils.koinViewModel
 import navigation.ClashGuideNavigation
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinContext
-import presentation.home.HomeViewModel
+import presentation.screens.home.HomeViewModel
 
 @Composable
 @Preview

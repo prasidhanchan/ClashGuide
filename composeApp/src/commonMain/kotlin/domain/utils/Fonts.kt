@@ -14,7 +14,7 @@ import org.jetbrains.compose.resources.Font
 
 /**
  * LondrinaSolid Font family.
- * @return returns a FontFamily object.
+ * @return Returns a FontFamily object.
  */
 @Composable
 fun LondrinaSolid(): FontFamily = FontFamily(
