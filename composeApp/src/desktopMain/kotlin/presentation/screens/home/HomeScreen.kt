@@ -18,6 +18,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -31,6 +35,7 @@ import clashguide.composeapp.generated.resources.troops
 import domain.models.Troop
 import domain.utils.clashBlack
 import org.jetbrains.compose.resources.stringResource
+import presentation.components.ClashGuideMenu
 import presentation.components.Loader
 import presentation.screens.home.components.ClashGuideSlider
 import presentation.screens.home.components.HomeAppBar
@@ -43,11 +48,11 @@ actual fun HomeScreen(
     uiState: UiState,
     onGameClick: () -> Unit,
     onAboutClick: () -> Unit,
-    onMenuClick: () -> Unit,
     navigateToDetail: (Troop) -> Unit
 ) {
     val state = rememberScrollState()
     val troopCardState = rememberScrollState()
+    var menuState by remember { mutableStateOf(false) }
 
     Surface(
         modifier = modifier.fillMaxSize(),
@@ -69,7 +74,7 @@ actual fun HomeScreen(
                     HomeAppBar(
                         onGameClick = onGameClick,
                         onAboutClick = onAboutClick,
-                        onMenuClick = onMenuClick
+                        onMenuClick = { menuState = true }
                     )
 
                     ClashGuideSlider(
@@ -141,6 +146,14 @@ actual fun HomeScreen(
             )
         }
     }
+
+    ClashGuideMenu(
+        visible = menuState,
+        contentAlignment = Alignment.TopEnd,
+        topPadding = 80.dp,
+        endPadding = 30.dp,
+        onDismiss = { menuState = false }
+    )
 }
 
 @Preview
@@ -162,7 +175,6 @@ private fun HomeScreenPreview() {
         ),
         onGameClick = { },
         onAboutClick = { },
-        onMenuClick = { },
         navigateToDetail = { }
     )
 }

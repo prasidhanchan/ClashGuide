@@ -12,6 +12,5 @@ expect fun HomeScreen(
     uiState: UiState,
     onGameClick: () -> Unit,
     onAboutClick: () -> Unit,
-    onMenuClick: () -> Unit,
     navigateToDetail: (Troop) -> Unit
 )

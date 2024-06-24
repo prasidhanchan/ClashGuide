@@ -61,7 +61,6 @@ fun ClashGuideNavigation(
                 onAboutClick = {
                     navController.navigate(Route.ABOUT_SCREEN.name)
                 },
-                onMenuClick = { },
                 navigateToDetail = { troop ->
                     val encodedImage = URLEncoder.encode(troop.image, Charsets.UTF_8)
                     navController.navigate("${Route.DETAIL_SCREEN}/${troop.name}/${troop.description}/${encodedImage}")

@@ -9,6 +9,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,6 +26,7 @@ import clashguide.composeapp.generated.resources.troops
 import domain.models.Troop
 import domain.utils.clashBlack
 import org.jetbrains.compose.resources.stringResource
+import presentation.components.ClashGuideMenu
 import presentation.components.Loader
 import presentation.screens.home.components.ClashGuideSlider
 import presentation.screens.home.components.HomeAppBar
@@ -34,10 +39,10 @@ actual fun HomeScreen(
     uiState: UiState,
     onGameClick: () -> Unit,
     onAboutClick: () -> Unit,
-    onMenuClick: () -> Unit,
     navigateToDetail: (Troop) -> Unit
 ) {
     val state = rememberScrollState()
+    var menuState by remember { mutableStateOf(false) }
 
     Surface(
         modifier = modifier.fillMaxSize(),
@@ -56,7 +61,7 @@ actual fun HomeScreen(
                 HomeAppBar(
                     onGameClick = onGameClick,
                     onAboutClick = onAboutClick,
-                    onMenuClick = onMenuClick
+                    onMenuClick = { menuState = true }
                 )
 
                 ClashGuideSlider(
@@ -85,6 +90,14 @@ actual fun HomeScreen(
             Loader()
         }
     }
+
+    ClashGuideMenu(
+        visible = menuState,
+        contentAlignment = Alignment.TopEnd,
+        topPadding = 100.dp,
+        endPadding = 30.dp,
+        onDismiss = { menuState = false }
+    )
 }
 
 @Preview
@@ -95,7 +108,6 @@ private fun HomeScreenPreview() {
         uiState = UiState(),
         onGameClick = { },
         onAboutClick = { },
-        onMenuClick = { },
         navigateToDetail = { }
     )
 }
