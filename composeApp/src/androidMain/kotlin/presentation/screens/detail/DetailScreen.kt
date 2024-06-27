@@ -9,23 +9,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
-import androidx.compose.ui.graphics.FilterQuality
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import coil3.compose.AsyncImage
-import domain.utils.LondrinaSolid
 import domain.utils.clashBlack
-import domain.utils.clashFontColor
 import presentation.components.AnimatedText
+import presentation.screens.detail.components.AnimatedDescription
+import presentation.screens.detail.components.AnimatedImage
 import presentation.screens.detail.components.DetailAppBar
 
 @Composable
@@ -62,25 +55,16 @@ actual fun DetailScreen(
                 modifier = Modifier.height(70.dp)
             )
 
-            AsyncImage(
-                model = image,
+            AnimatedImage(
+                name = name,
+                image = image,
                 modifier = Modifier
+                    .fillMaxSize()
                     .padding(vertical = 120.dp)
-                    .scale(1.8f),
-                contentScale = ContentScale.FillBounds,
-                filterQuality = FilterQuality.High,
-                contentDescription = name
+                    .scale(1.8f)
             )
 
-            Text(
-                text = description,
-                style = TextStyle(
-                    fontSize = 26.sp,
-                    fontWeight = FontWeight.Bold,
-                    fontFamily = LondrinaSolid(),
-                    color = clashFontColor
-                )
-            )
+            AnimatedDescription(description = description)
         }
     }
 }

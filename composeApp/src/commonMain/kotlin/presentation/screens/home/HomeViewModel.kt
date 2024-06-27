@@ -13,6 +13,7 @@ import kotlinx.coroutines.withContext
 class HomeViewModel(
     private val troopRepository: TroopRepository
 ) : ViewModel() {
+
     var uiState = MutableStateFlow(UiState())
         private set
 
@@ -20,6 +21,9 @@ class HomeViewModel(
         getAllTroops()
     }
 
+    /**
+     * Function to get all the available troops from the DB
+     */
     private fun getAllTroops() {
         uiState.update { it.copy(isLoading = true) }
         viewModelScope.launch(Dispatchers.IO) {
@@ -49,6 +53,18 @@ class HomeViewModel(
                     }
                 }
             }
+        }
+    }
+
+    fun setHasPurchasedPremium(value: Boolean) {
+        viewModelScope.launch {
+            uiState.update { it.copy(isLoading = true) }
+            delay(2000L)
+
+            uiState.update { it.copy(hasPurchasedPremium = value) }
+
+            delay(3000L)
+            uiState.update { it.copy(isLoading = false) }
         }
     }
 }

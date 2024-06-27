@@ -16,4 +16,15 @@
     <string name="about_body">This app is designed and built by Prasidh Gopal Anchan.\n\nBackend: Spring Boot\n\nTech Stack:\n• Ktor - Network calls\n• Koin - Dependency Injection\n• Coil - Image Loading</string>
     <string name="website">Website</string>
     <string name="github">Github</string>
+    <string name="purchase">Purchase</string>
+    <string name="premium">Premium</string>
+    <string name="access_all_super_troops">Access all Super Troops with </string>
+    <string name="purchase_premium">Purchase Premium</string>
+    <string name="premium_troops">Premium troops</string>
+    <string name="unlimited_access">Unlimited access</string>
+    <string name="unlimited_views">Unlimited views</string>
+    <string name="only">Only @\n\n</string>
+    <string name="price">₹ 99</string>
+    <string name="tick">Tick</string>
+    <string name="purchase_complete">Purchase Completed!</string>
 </resources>

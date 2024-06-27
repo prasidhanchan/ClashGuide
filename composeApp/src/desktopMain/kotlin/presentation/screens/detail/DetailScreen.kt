@@ -11,22 +11,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.FilterQuality
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import coil3.compose.AsyncImage
-import domain.utils.LondrinaSolid
 import domain.utils.clashBlack
-import domain.utils.clashFontColor
 import presentation.components.AnimatedText
+import presentation.screens.detail.components.AnimatedDescription
+import presentation.screens.detail.components.AnimatedImage
 import presentation.screens.detail.components.DetailAppBar
 
 @Composable
@@ -63,7 +55,7 @@ actual fun DetailScreen(
             ) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.SpaceEvenly,
+                    verticalArrangement = Arrangement.spacedBy(100.dp),
                     horizontalAlignment = Alignment.Start
                 ) {
                     AnimatedText(
@@ -72,34 +64,20 @@ actual fun DetailScreen(
                         fonSize = 120
                     )
 
-                    Text(
-                        text = description,
-                        modifier = Modifier.fillMaxWidth(0.4f),
-                        style = TextStyle(
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold,
-                            fontFamily = LondrinaSolid(),
-                            color = clashFontColor
-                        ),
-                        textAlign = TextAlign.Start
+                    AnimatedDescription(
+                        description = description,
+                        modifier = Modifier.fillMaxWidth(0.4f)
                     )
                 }
 
-                Box(
+                AnimatedImage(
+                    name = name,
+                    image = image,
                     modifier = Modifier
                         .fillMaxHeight()
                         .fillMaxWidth(0.6f)
-                        .padding(bottom = 30.dp, top = 30.dp, end = 80.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    AsyncImage(
-                        model = image,
-                        modifier = Modifier.fillMaxSize(),
-                        contentScale = ContentScale.FillBounds,
-                        filterQuality = FilterQuality.High,
-                        contentDescription = name
-                    )
-                }
+                        .padding(bottom = 30.dp, top = 30.dp, end = 80.dp)
+                )
             }
         }
     }

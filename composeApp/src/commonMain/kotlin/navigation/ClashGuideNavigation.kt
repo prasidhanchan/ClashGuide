@@ -18,6 +18,7 @@ import presentation.screens.detail.DetailScreen
 import presentation.screens.game.GameScreen
 import presentation.screens.home.HomeScreen
 import presentation.screens.home.HomeViewModel
+import presentation.screens.purchase.PurchaseScreen
 import presentation.screens.splash.SplashScreen
 import java.net.URLEncoder
 
@@ -62,8 +63,12 @@ fun ClashGuideNavigation(
                     navController.navigate(Route.ABOUT_SCREEN.name)
                 },
                 navigateToDetail = { troop ->
-                    val encodedImage = URLEncoder.encode(troop.image, Charsets.UTF_8)
-                    navController.navigate("${Route.DETAIL_SCREEN}/${troop.name}/${troop.description}/${encodedImage}")
+                    if (troop.isSuperTroop && !uiState.hasPurchasedPremium) {
+                        navController.navigate(Route.PURCHASE_SCREEN.name)
+                    } else {
+                        val encodedImage = URLEncoder.encode(troop.image, Charsets.UTF_8)
+                        navController.navigate("${Route.DETAIL_SCREEN}/${troop.name}/${troop.description}/${encodedImage}")
+                    }
                 }
             )
         }
@@ -103,6 +108,32 @@ fun ClashGuideNavigation(
                 name = name!!,
                 description = description!!,
                 image = image!!,
+                onBackPress = { navController.popBackStack() }
+            )
+        }
+
+        composable(
+            route = Route.PURCHASE_SCREEN.name,
+            enterTransition = {
+                slideIntoContainer(
+                    towards = SlideDirection.Left,
+                    animationSpec = tween(durationMillis = 500)
+                )
+            },
+            exitTransition = {
+                slideOutOfContainer(
+                    towards = SlideDirection.Right,
+                    animationSpec = tween(durationMillis = 500)
+                )
+            }
+        ) {
+            val uiState by homeViewModel.uiState.collectAsState()
+
+            PurchaseScreen(
+                innerPadding = innerPadding,
+                onPurchasePress = homeViewModel::setHasPurchasedPremium,
+                loading = uiState.isLoading,
+                hasPurchasedPremium = uiState.hasPurchasedPremium,
                 onBackPress = { navController.popBackStack() }
             )
         }

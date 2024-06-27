@@ -1,7 +1,6 @@
 package domain.utils
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import clashguide.composeapp.generated.resources.LondrinaSolid_Black

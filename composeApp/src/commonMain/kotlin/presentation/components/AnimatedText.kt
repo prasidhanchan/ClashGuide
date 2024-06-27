@@ -3,9 +3,11 @@ package presentation.components
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInVertically
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -34,19 +36,23 @@ import kotlinx.coroutines.delay
 fun AnimatedText(
     text: String,
     modifier: Modifier = Modifier,
-    fonSize: Int = 55
+    fonSize: Int = 50
 ) {
     val splitText = text.split("")
 
     var visible by remember { mutableStateOf(false) }
 
+    val state = rememberScrollState()
+
     LaunchedEffect(key1 = Unit) {
-        delay(600L)
+        delay(700L)
         visible = true
     }
 
     Row(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .horizontalScroll(state = state),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Start
     ) {
@@ -56,8 +62,8 @@ fun AnimatedText(
                 enter = slideInVertically(
                     initialOffsetY = { it },
                     animationSpec = tween(
-                        durationMillis = 500,
-                        delayMillis = index * 100
+                        durationMillis = 400,
+                        delayMillis = index * 50
                     )
                 )
             ) {

@@ -1,7 +1,6 @@
 package domain.utils
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import org.koin.compose.currentKoinScope
 
@@ -13,8 +12,4 @@ import org.koin.compose.currentKoinScope
 inline fun <reified T : ViewModel> koinViewModel(): T {
     val scope = currentKoinScope()
     return scope.get<T>()
-}
-
-fun String.toColor(): Long {
-    return this.toLong()
 }
