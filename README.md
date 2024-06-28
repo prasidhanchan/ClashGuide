@@ -20,7 +20,7 @@
 
 <div align="center">
 <div>
-  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/ecb87af3-d8f3-46fa-9853-b7040a251f2c" width="30%"  alt="Splash" style="display-flex: block; margin-right: 50px; margin-bottom: 50px"/> <!-- Splash -->
+  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/ecb87af3-d8f3-46fa-9853-b7040a251f2c" width="30%"  alt="Splash" style="display-flex: block; margin-right: 50; margin-bottom: 50px"/> <!-- Splash -->
   <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/89127410-39f9-4f11-8d8b-0f5434d43f18" width="30%"  alt="Home" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Home -->
   <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/2dae8082-b3fc-43db-b82f-7d8f14dedf53" width="30%"  alt="Detail" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Detail -->
   <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/e1db1520-6fdf-4afc-9d95-f93a73c7875d" width="30%"  alt="Purchase" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Purchase -->
