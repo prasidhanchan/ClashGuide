@@ -3,16 +3,18 @@
 </h1>
 <p align="center">
   This is a Kotlin Multiplatform project targeting Android, Desktop.
-  This app display all the Clash of Clans Troops available on the [API](https://github.com/prasidhanchan/clash-guide-api) along with their details ✨.
+  This app display all the Clash of Clans Troops available on the API along with their details ✨.
 </p>
 
 # Features
 
 - Clean architecture.
 - User-friendly intuitive UI.
+- Efficiently retrieves all troops from RESTful [API](https://github.com/prasidhanchan/clash-guide-api).
 - Supports Android and Desktop.
 
 # Try Clash Guide
+
 - Download [Android](https://github.com/prasidhanchan/ClashGuide/releases/download/v1.0.0/Clash_Guide_v1.0.0.apk) app
 - Download [Desktop](https://github.com/prasidhanchan/ClashGuide/releases/download/v1.0.0/Clash_Guide_v1.0.0.exe) app
 
@@ -63,4 +65,4 @@ Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/kotlin-multipl
 
 # Disclaimer
 
-This material is unofficial and is not endorsed by Supercell. For more information see [Supercell's Fan Content Policy](www.supercell.com/fan-content-policy).
+This material is unofficial and is not endorsed by Supercell. For more information see [Supercell's Fan Content Policy](https://www.supercell.com/fan-content-policy).
