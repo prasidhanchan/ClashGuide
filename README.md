@@ -33,12 +33,12 @@
 
 <div align="center">
 <div>
-  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/0f7f885f-c030-4a41-95f9-3a9de80f8ce6" width="30%"  alt="Splash" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Splash -->
-  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/73ce05de-ff40-4dac-ba4d-be704be274da" width="30%"  alt="Home" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Home -->
-  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/367d1384-311d-4fce-a6e4-64e66296765f" width="30%"  alt="Detail" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Detail -->
-  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/f495d616-47e7-47c1-894c-b9a979dfff2b" width="30%"  alt="Purchase" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Purchase -->
-  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/c969f148-20cd-4cb3-a3c1-f9b4b2efc6f6" width="30%"  alt="Game" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Game -->
-  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/1c558ac6-7a17-47d5-8918-a3b9c860bccd" width="30%"  alt="About" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- About -->
+  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/0f7f885f-c030-4a41-95f9-3a9de80f8ce6" width="45%"  alt="Splash" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Splash -->
+  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/73ce05de-ff40-4dac-ba4d-be704be274da" width="45%"  alt="Home" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Home -->
+  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/367d1384-311d-4fce-a6e4-64e66296765f" width="45%"  alt="Detail" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Detail -->
+  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/f495d616-47e7-47c1-894c-b9a979dfff2b" width="45%"  alt="Purchase" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Purchase -->
+  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/c969f148-20cd-4cb3-a3c1-f9b4b2efc6f6" width="45%"  alt="Game" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- Game -->
+  <img src="https://github.com/prasidhanchan/ClashGuide/assets/92362239/1c558ac6-7a17-47d5-8918-a3b9c860bccd" width="45%"  alt="About" style="display-flex: block; margin-right: 10px; margin-bottom: 10px"/> <!-- About -->
 </div>
 </div>
 
