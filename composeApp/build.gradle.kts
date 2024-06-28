@@ -17,9 +17,9 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_21)
         }
     }
-    
+
     jvm("desktop")
-    
+
     sourceSets {
         val desktopMain by getting
 
@@ -122,6 +122,21 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Exe, TargetFormat.Deb)
             packageName = "com.clash.guide.app"
             packageVersion = "1.0.0"
+
+            windows {
+                packageName = "Clash Guide"
+                iconFile.set(project.file("resources/clash_guide_icon.ico"))
+                dirChooser = true
+                menuGroup = "Clash Guide"
+                upgradeUuid = "1a390ace-bf33-45e2-a49a-33eccbbc0420"
+            }
+
+            linux {
+                packageName = "Clash Guide"
+                iconFile.set(project.file("resources/clash_guide_icon.png"))
+                debMaintainer = "prasidhgopalanchan@gmail.com"
+                menuGroup = "Clash Guide"
+            }
         }
     }
 }
