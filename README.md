@@ -60,3 +60,7 @@
 <br><br>
 
 Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/kotlin-multiplatform/)…
+
+# Disclaimer
+
+This content is unofficial and is not endorsed by Supercell. For more information see [Supercell's Fan Content Policy](www.supercell.com/fan-content-policy).
