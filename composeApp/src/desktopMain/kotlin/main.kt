@@ -7,7 +7,9 @@ import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import clashguide.composeapp.generated.resources.Res
 import clashguide.composeapp.generated.resources.app_name
+import clashguide.composeapp.generated.resources.clash_guide_icon
 import di.KoinInitializer
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 fun main() = application {
@@ -20,7 +22,8 @@ fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
         state = state,
-        title = stringResource(resource = Res.string.app_name)
+        title = stringResource(resource = Res.string.app_name),
+        icon = painterResource(resource = Res.drawable.clash_guide_icon)
     ) {
         ClashGuideApp()
     }
