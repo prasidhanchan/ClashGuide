@@ -57,6 +57,6 @@
 </div>
 </div>
 
-<br>
+<br><br>
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/kotlin-multiplatform/)…
